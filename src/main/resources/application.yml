@@ -1,0 +1,5 @@
+myapp:
+  scraping: ${SCRAPING_INTERVAL_TIME:60000}
+  loop_count: ${LOOP_COUNT:60000}
+  user: ${USER:60000}
+  password: ${PASSWORD:60000}
