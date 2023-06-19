@@ -1,5 +1,6 @@
 package com.example.scraping1;
 
+import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+@Slf4j
 @SpringBootApplication
 public class Scraping1Application {
 
@@ -39,7 +41,6 @@ public class Scraping1Application {
             final String SCHOOLID = "mSg1DWxRvAI-brGQYS-1OA==";
             final String USERNAME = myapp.getUser();
             final String PASS = myapp.getPassword();
-
 
             for (int vvv = 1; vvv < myapp.getLoop_count(); vvv++) {
 
@@ -87,22 +88,22 @@ public class Scraping1Application {
                         Clip  clip = AudioSystem.getClip();
                         clip.open(audioStream);
                         clip.loop(10);
-                        System.out.println("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+                        log.info("空きがありました。音を鳴らしました。");
                         break;
                     }
                 }
 
-                System.out.println("-----------------------------------------------------------------------------");
-                System.out.println("-----------------------------------------------------------------------------");
-                System.out.println("-----------------------------------------------------------------------------");
+                log.info("ループ回数：" + vvv);
 
                 Thread.sleep(myapp.getScraping());
             }
 
         } catch (IOException | InterruptedException | UnsupportedAudioFileException | LineUnavailableException e) {
-            throw new RuntimeException(e);
+            log.error("エラーが発生しました。" ,e);
         }
 
+        log.info("プロセスを終了します。");
+        System.exit(0);
     }
 
 
