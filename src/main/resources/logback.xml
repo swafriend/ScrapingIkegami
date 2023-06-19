@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <!-- デフォルト設定読み込み -->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!-- ERROR以上は標準エラーにも出力する -->
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <target>System.err</target>
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <!-- base.xmlでCONSOLE,FILEを参照、STDERRを追加 -->
+        <appender-ref ref="STDERR"/>
+    </root>
+</configuration>
