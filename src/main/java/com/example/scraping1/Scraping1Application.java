@@ -30,7 +30,6 @@ public class Scraping1Application {
     public static void main(String[] args) {
         SpringApplication.run(Scraping1Application.class, args);
 
-//        String thePath = "C:\\Windows\\Media\\Windows Ringin.wav";
         String thePath = "C:\\work\\Scraping\\ikegami.wav";
         try (AudioInputStream audioStream = AudioSystem.getAudioInputStream(new File(thePath).getAbsoluteFile())) {
 
