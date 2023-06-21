@@ -30,7 +30,8 @@ public class Scraping1Application {
     public static void main(String[] args) {
         SpringApplication.run(Scraping1Application.class, args);
 
-        String thePath = "C:\\Windows\\Media\\Windows Ringin.wav";
+//        String thePath = "C:\\Windows\\Media\\Windows Ringin.wav";
+        String thePath = "C:\\work\\Scraping\\ikegami.wav";
         try (AudioInputStream audioStream = AudioSystem.getAudioInputStream(new File(thePath).getAbsoluteFile())) {
 
             String LOGIN_URL = "https://www.e-license.jp/el31/mSg1DWxRvAI-brGQYS-1OA==";
@@ -88,7 +89,7 @@ public class Scraping1Application {
                     // the reference to the clip
                     Clip clip = AudioSystem.getClip();
                     clip.open(audioStream);
-                    clip.loop(10);
+                    clip.loop(0);
                     log.info("空きがありました。音を鳴らしました。");
                     break;
                 }
