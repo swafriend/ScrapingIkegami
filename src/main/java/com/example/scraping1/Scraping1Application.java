@@ -96,9 +96,6 @@ public class Scraping1Application {
 
             Thread.sleep(myapp.getScraping());
             log.info("終了しました。");
-//            log.info("ループ回数：" + vvv);
-//            Thread.sleep(myapp.getScraping());
-//            }
 
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException | InterruptedException e) {
             log.error("エラーが発生しました。", e);
