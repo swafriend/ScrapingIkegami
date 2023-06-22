@@ -43,8 +43,6 @@ public class Scraping1Application {
             final String USERNAME = myapp.getUser();
             final String PASS = myapp.getPassword();
 
-//            for (int vvv = 1; vvv < myapp.getLoop_count(); vvv++) {
-
             Map<String, String> cookies = new HashMap<>();
             Connection.Response response1 = Jsoup.connect(LOGIN_URL)
                     .method(Connection.Method.GET)
